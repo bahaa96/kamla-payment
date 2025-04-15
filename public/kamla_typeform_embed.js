@@ -2,7 +2,7 @@ function renderNewApplicationPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const newApplicationRoute = urlParams.get("new_application");
 
-  if (!newApplicationRoute) {
+  if (newApplicationRoute !== "true") {
     return;
   }
 
