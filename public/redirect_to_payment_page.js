@@ -1,10 +1,11 @@
-
 const PAYMENT_API_URL =
   "https://kamla-payment.vercel.app/api/payment-intention";
 
 function renderRedirectToPaymentPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const redirectToPayment = urlParams.get("redirect_to_payment");
+  const customerName = urlParams.get("name");
+  const phoneNumber = urlParams.get("phone_number");
 
   if (redirectToPayment !== "true") {
     return;
@@ -44,6 +45,9 @@ function renderRedirectToPaymentPage() {
   const PRODUCT_DESCRIPTION = "Online Consultation (30 minutes call)";
   const PAYMENT_REDIRECTION_URL = "";
 
+  const customerFirstName = customerName.split(" ")[0];
+  const customerLastName = customerName.split(" ")[1];
+
   const payload = {
     orderDetails: {
       delivery_needed: false,
@@ -59,10 +63,10 @@ function renderRedirectToPaymentPage() {
       ],
     },
     billingData: {
-      first_name: "Ahmed",
-      last_name: "Bahaadine",
+      first_name: customerFirstName,
+      last_name: customerLastName,
       email: "customer@example.com",
-      phone_number: "+201555550425",
+      phone_number: phoneNumber,
 
       // city: "N/A",
       // street: "N/A",
