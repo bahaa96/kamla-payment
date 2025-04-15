@@ -11,10 +11,10 @@ function renderNewApplicationPage() {
   `;
 
   window.addEventListener("DOMContentLoaded", function () {
-    const typeformEmbed = document.getElementById("typeform-embed");
+    const typeformEmbedElement = document.getElementById("typeform-embed");
     const typeformUrl = "https://uxs4313vxah.typeform.com/to/LtDCBOX6";
 
-    window.tf.createWidget(typeformEmbed, typeformUrl, {
+    window.typeformEmbed.makeWidget(typeformEmbedElement, typeformUrl, {
       hideHeaders: true,
       hideFooter: true,
       autoFocus: true,
