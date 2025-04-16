@@ -5,11 +5,13 @@ import { PaymobService } from '../infrastructure/services/paymob.service';
 
 export class PaymentController {
   private paymobService: PaymobService;
-  private readonly redirectionURL: string | undefined;
+  private readonly paymentSuccessRedirectionURL: string | undefined;
+  private readonly paymentErrorRedirectionURL: string | undefined;
 
   constructor() {
     this.paymobService = new PaymobService();
-    this.redirectionURL = process.env.PAYMOB_REDIRECTION_URL;
+    this.paymentSuccessRedirectionURL = process.env.PAYMENT_SUCCESS_REDIRECTION_URL;
+    this.paymentErrorRedirectionURL = process.env.PAYMENT_ERROR_REDIRECTION_URL;
   }
 
   async createPaymentIntention(req: Request, res: Response): Promise<void> {
@@ -26,7 +28,7 @@ export class PaymentController {
         ],
         items: orderDetails.items,
         billing_data: billingData,
-        redirection_url: this.redirectionURL
+        redirection_url: this.paymentSuccessRedirectionURL
       });
 
 
