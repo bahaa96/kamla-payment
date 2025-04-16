@@ -125,7 +125,7 @@ async function renderRedirectToPaymentPage() {
     billingData: {
       first_name: customerFirstName,
       last_name: customerLastName,
-      email: data.email || "customer@example.com",
+      email: customerData.email || "customer@example.com",
       phone_number: phoneNumber,
     },
   };
