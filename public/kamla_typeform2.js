@@ -25,7 +25,8 @@ function renderNewApplicationPage() {
         console.log("Form submitted!", event);
 
         // You can redirect or perform other actions
-        // window.location.href = '/thank-you-page';
+        window.location.href =
+          "/?redirect_to_payment=true&response_id=" + event.response_id;
       },
     });
   });

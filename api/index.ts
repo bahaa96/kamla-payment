@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import paymentRoutes from './routes/payment.routes';
 import typeformRoutes from './routes/typeform.routes';
+import submissionRoutes from './routes/submission.routes';
 
 // Load environment variables
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(cors()); // Enable CORS for all origins
 
 // Routes
 app.use('/api', paymentRoutes);
+app.use('/api', submissionRoutes);
 app.use('/typeform', typeformRoutes);
 
 // Health check endpoint
