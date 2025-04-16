@@ -6,7 +6,7 @@ function renderNewApplicationPage() {
     return;
   }
 
-  document.body.innerHTML += `
+  document.body.innerHTML = `
   <div id="typeform-embed" style="height: 500px; width: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000;"></div>
   `;
 
