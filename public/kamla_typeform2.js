@@ -7,7 +7,7 @@ function renderNewApplicationPage() {
   }
 
   document.body.innerHTML = `
-  <div id="typeform-embed" style="height: 500px; width: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000;"></div>
+  <div id="typeform-embed" style="height: 100vh; width: 100vw; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000;"></div>
   `;
 
   window.addEventListener("DOMContentLoaded", function () {
