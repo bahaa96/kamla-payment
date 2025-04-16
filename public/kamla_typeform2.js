@@ -19,9 +19,10 @@ function renderNewApplicationPage() {
       hideFooter: true,
       autoFocus: true,
       opacity: 1,
-      onSubmit: function (event, result) {
+
+      onSubmit: function (event) {
         // Trigger on form submission
-        console.log("Form submitted!", event, result);
+        console.log("Form submitted!", event);
 
         // You can redirect or perform other actions
         // window.location.href = '/thank-you-page';
