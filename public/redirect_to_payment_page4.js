@@ -106,7 +106,8 @@ async function renderRedirectToPaymentPage() {
   const customerName = customerData.fullName;
   const phoneNumber = customerData.phoneNumber;
   const customerFirstName = customerName.split(" ")[0];
-  const customerLastName = customerName.split(" ").slice(1).join(" ") || ""; // Handle single name or multiple last names
+  const customerLastName =
+    customerName.split(" ").slice(1).join(" ") || customerFirstName; // Handle single name or multiple last names
 
   const payload = {
     orderDetails: {
