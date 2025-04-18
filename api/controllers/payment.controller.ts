@@ -28,7 +28,7 @@ export class PaymentController {
         ],
         items: orderDetails.items,
         billing_data: billingData,
-        redirection_url: this.paymentSuccessRedirectionURL
+        redirection_url: `${this.paymentSuccessRedirectionURL}&name=${billingData.owner.first_name}`
       });
 
 

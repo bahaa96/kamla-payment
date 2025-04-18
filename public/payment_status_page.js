@@ -1,6 +1,7 @@
 function renderPaymentStatusPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const paymentStatus = urlParams.get("payment_status");
+  const customerName = urlParams.get("name");
 
   if (!paymentStatus) {
     return;
@@ -19,17 +20,23 @@ function renderPaymentStatusPage() {
       </div>
     `;
 
-    var successMessage = `
+    let successMessageText = window.GlobalSettings?.successMessage;
+
+    // while (!successMessageText) {
+    //   successMessageText = window.GlobalSettings?.successMessage;
+    // }
+
+    const successMessageElement = `
       <div style="display: flex; justify-content: center; align-items: center; gap: 32px;">
       <h2 style="color:#b9218b; font-size: 24px; font-weight: 700;">
-        Payment Success
+        ${successMessageText?.replace("{customerName}", customerName)}
         </h2>
     `;
 
     document.body.innerHTML = `
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; gap: 50px; background-color: #F3DCF8;">
         ${SuccessImage}
-        ${successMessage}
+        ${successMessageElement}
       </div>
     `;
   } else {

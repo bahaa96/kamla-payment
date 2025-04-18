@@ -24,7 +24,7 @@ async function renderRedirectToPaymentPage() {
 `;
 
   var LoadingMessage = `
-  <div style="display: flex; justify-content: center; align-items: center; gap: 32px;">
+  <div class="loading-message" style="display: flex; justify-content: center; align-items: center; gap: 32px;">
     <h2 style="color:#b9218b; font-size: 24px; font-weight: 700;">
       Redirecting to payment page 
     </h2>

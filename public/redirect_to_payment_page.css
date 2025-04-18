@@ -25,4 +25,9 @@
   }
 }
 
+@media (max-width: 768px) {
+  .loading-message h2 {
+    font-size: 20px;
+  }
+}
 /* Redirect to payment page Message Loader Styling End */
